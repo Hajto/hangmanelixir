@@ -25,6 +25,12 @@ defmodule Hangman.Router do
     resources "/", MasterCatController
   end
 
+  scope "/category", Hangman do
+    pipe_through :api
+
+    resources "/", CategoryController
+  end
+
   scope "/words", Hangman do
     pipe_through :api
 

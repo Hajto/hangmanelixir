@@ -16,8 +16,7 @@ defmodule Hangman.MasterCatView do
     def encode(page, _options) do
       %{
         id: page.id,
-        name: page.name,
-        categories: page.categories
+        name: page.name
       } |> Poison.Encoder.encode([])
     end
   end

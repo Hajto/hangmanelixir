@@ -6,6 +6,7 @@
                              logger,phoenix_ecto,postgrex]},
               {vsn,"0.0.1"},
               {modules,['Elixir.Hangman','Elixir.Hangman.Category',
+                        'Elixir.Hangman.CategoryController',
                         'Elixir.Hangman.Endpoint','Elixir.Hangman.ErrorView',
                         'Elixir.Hangman.LayoutView',
                         'Elixir.Hangman.MasterCat',
@@ -13,8 +14,9 @@
                         'Elixir.Hangman.MasterCatView',
                         'Elixir.Hangman.PageController',
                         'Elixir.Hangman.PageView','Elixir.Hangman.Repo',
+                        'Elixir.Hangman.ResponseUtils',
                         'Elixir.Hangman.Router',
                         'Elixir.Hangman.Router.Helpers',
                         'Elixir.Hangman.UserSocket','Elixir.Hangman.Web',
                         'Elixir.Hangman.Word','Elixir.Hangman.WordController',
-                        'Elixir.Poison.Encoder.MyApp.Page']}]}.
+                        'Elixir.Poison.Encoder.Hangman.MasterCat']}]}.
