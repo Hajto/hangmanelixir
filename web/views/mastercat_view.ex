@@ -1,8 +1,6 @@
 defmodule Hangman.MasterCatView do
   use Hangman.Web, :view
 
-  alias Hangman.MasterCat
-
   def render("index.json", %{ :mastercats => params }) do
     params
   end
@@ -17,7 +15,7 @@ defmodule Hangman.MasterCatView do
       %{
         id: page.id,
         name: page.name,
-        categories: page.categories
+        categories: Hangman.ModelUtils.isArrayLoaded(page.categories)
       } |> Poison.Encoder.encode([])
     end
   end

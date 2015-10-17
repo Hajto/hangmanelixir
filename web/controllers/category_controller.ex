@@ -6,9 +6,8 @@ defmodule Hangman.CategoryController do
   alias Hangman.ResponseUtils
 
   def index(conn, _params) do
-    return = Repo.all from m in MasterCat,
-      join: c in assoc(m, :categories),
-      preload: [categories: c]
+    return = Repo.all from c in Category,
+      preload: [:mastercat]
 
     IO.inspect(return)
 

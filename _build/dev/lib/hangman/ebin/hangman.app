@@ -7,11 +7,13 @@
               {vsn,"0.0.1"},
               {modules,['Elixir.Hangman','Elixir.Hangman.Category',
                         'Elixir.Hangman.CategoryController',
+                        'Elixir.Hangman.CategoryView',
                         'Elixir.Hangman.Endpoint','Elixir.Hangman.ErrorView',
                         'Elixir.Hangman.LayoutView',
                         'Elixir.Hangman.MasterCat',
                         'Elixir.Hangman.MasterCatController',
                         'Elixir.Hangman.MasterCatView',
+                        'Elixir.Hangman.ModelUtils',
                         'Elixir.Hangman.PageController',
                         'Elixir.Hangman.PageView','Elixir.Hangman.Repo',
                         'Elixir.Hangman.ResponseUtils',
@@ -19,4 +21,7 @@
                         'Elixir.Hangman.Router.Helpers',
                         'Elixir.Hangman.UserSocket','Elixir.Hangman.Web',
                         'Elixir.Hangman.Word','Elixir.Hangman.WordController',
-                        'Elixir.Poison.Encoder.Hangman.MasterCat']}]}.
+                        'Elixir.Hangman.WordView',
+                        'Elixir.Poison.Encoder.Hangman.Category',
+                        'Elixir.Poison.Encoder.Hangman.MasterCat',
+                        'Elixir.Poison.Encoder.Hangman.Word']}]}.
