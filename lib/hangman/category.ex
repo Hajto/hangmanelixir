@@ -5,6 +5,7 @@ defmodule Hangman.Category do
     field :name, :string
 
     has_many :words, Hangman.Word
+    belongs_to :mastercats, Hangman.MasterCat
   end
 
 end

@@ -4,6 +4,7 @@ defmodule Hangman.Repo.Migrations.CreateWords do
   def change do
     create table(:words) do
       add :content, :string
+      add :category_id, references(:categories)
 
       timestamps
     end

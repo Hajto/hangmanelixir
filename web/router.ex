@@ -19,6 +19,18 @@ defmodule Hangman.Router do
     get "/", PageController, :index
   end
 
+  scope "/mastercat", Hangman do
+    pipe_through :api
+
+    resources "/", MasterCatController
+  end
+
+  scope "/words", Hangman do
+    pipe_through :api
+
+    resources "/", WordController
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", Hangman do
   #   pipe_through :api
