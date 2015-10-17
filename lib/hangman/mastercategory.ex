@@ -4,7 +4,7 @@ defmodule Hangman.MasterCat do
   schema "mastercats" do
     field :name, :string
 
-    has_many :categories, Hangman.Category
+    has_many :categories, Hangman.Category, foreign_key: :mastercat_id
   end
 
   @required_fields ~w(name )
@@ -14,4 +14,5 @@ defmodule Hangman.MasterCat do
     model
     |> cast(params, @required_fields, @optional_fields)
   end
+
 end

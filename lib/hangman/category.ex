@@ -5,7 +5,7 @@ defmodule Hangman.Category do
     field :name, :string
 
     has_many :words, Hangman.Word
-    belongs_to :mastercat, Hangman.MasterCat
+    belongs_to :mastercat, Hangman.MasterCat, foreign_key: :mastercat_id
 
     timestamps
   end

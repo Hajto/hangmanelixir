@@ -2,22 +2,30 @@ defmodule Hangman.CategoryController do
   use Hangman.Web, :controller
 
   alias Hangman.Category
+  alias Hangman.MasterCat
   alias Hangman.ResponseUtils
 
-  def create(conn, %{ "category" => params, "parent" => parent_id }) do
+  def index(conn, _params) do
+    return = Repo.all from m in MasterCat,
+      join: c in assoc(m, :categories),
+      preload: [categories: c]
 
+    IO.inspect(return)
+
+    render conn, "index.json", categories: return
+  end
+
+  def create(conn, %{ "category" => params, "parent" => parent_id }) do
     parent = Repo.get(Hangman.MasterCat, parent_id)
     changeset = build(parent, :categories)
       |> Category.changeset( params)
     IO.inspect(changeset)
-
     if changeset.valid? do
       Repo.insert(changeset)
       json conn, ResponseUtils.jsonResponse(true)
     else
       json conn, ResponseUtils.jsonResponse(false,["parents doesn't exist"])
     end
-
   end
 
 end
