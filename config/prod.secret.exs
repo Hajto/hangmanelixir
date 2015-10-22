@@ -9,7 +9,7 @@ config :hangman, Hangman.Endpoint,
 # Configure your database
 config :hangman, Hangman.Repo,
   adapter: Ecto.Adapters.Postgres,
-  url: System.get_env("DATABASE_URL"),
+  url: System.get_env("DATA_URL"),
   username: System.get_env("USER"),
   password: System.get_env("PASSWORD"),
   database: System.get_env("DATABASE"),
