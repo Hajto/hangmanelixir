@@ -9,7 +9,8 @@ config :hangman, Hangman.Endpoint,
 # Configure your database
 config :hangman, Hangman.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "hangman_prod",
+  url: System.get_env("DATABASE_URL"),
+  username: System.get_env("USER"),
+  password: System.get_env("PASSWORD"),
+  database: System.get_env("DATABASE"),
   pool_size: 20

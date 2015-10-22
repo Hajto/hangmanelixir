@@ -17,11 +17,9 @@ defmodule Hangman.WordController do
     changeset = build(parent, :words)
       |> Word.changeset( params)
     IO.inspect(changeset)
-    if changeset.valid? do
-      Repo.insert(changeset)
-      json conn, ResponseUtils.jsonResponse(true)
-    else
-      json conn, ResponseUtils.jsonResponse(false,["parents doesn't exist"])
+    case Repo.insert(changeset) do
+      { :ok, _ } -> json conn, ResponseUtils.jsonResponse(true)
+      { :error,  _ } -> json conn, ResponseUtils.jsonResponse(false,[])
     end
   end
 
